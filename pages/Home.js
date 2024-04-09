@@ -19,14 +19,14 @@ import React from 'react'
 const Home = () => {
   return (
     <div className="overflow-x-hidden w-full h-auto flex flex-col justify-start items-center gap-4">
-    <Cursor/>
-     <Navbar/>
-     <Hero/>
+      <Cursor />
+      <Navbar />
+      <Hero />
 
-     <div className="scroller relative w-full h-96" data-speed="fast">
+      <div className="scroller relative w-full h-96" data-speed="fast">
         <Slider />
       </div>
-       <Technologies />
+      <Technologies />
       <CaseStudiesSection />
       <ServicesSection />
       <Process />
