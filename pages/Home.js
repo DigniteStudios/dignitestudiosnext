@@ -14,30 +14,40 @@ import WhyChooseUsSection from '@/components/Home/WhyChooseUsSection'
 import Cursor from '@/components/global/Cursor'
 import FixedSocials from '@/components/global/FixedSocials'
 import Navbar from '@/components/global/Navbar'
-import React from 'react'
+import { GlobalContext } from '@/context/GlobalContext'
+import React, { useContext } from 'react'
 
 const Home = () => {
+  const { palette } = useContext(GlobalContext)
   return (
-    <div className="overflow-x-hidden w-full h-auto flex flex-col justify-start items-center gap-4">
-      <Cursor />
-      <Navbar />
-      <Hero />
+    <div
+      className="transition-all duration-700"
+      style={{
+        background: palette?.background,
+        color: palette?.color,
+      }}
+    >
+      <div className="overflow-x-hidden w-full h-auto flex flex-col justify-start items-center gap-4">
+        <Cursor />
+        <Navbar />
+        <Hero />
 
-      <div className="scroller relative w-full h-96" data-speed="fast">
-        <Slider />
+        <div className="scroller relative w-full h-96" data-speed="fast">
+          <Slider />
+        </div>
+        <Technologies />
+        <CaseStudiesSection />
+        <ServicesSection />
+        <Process />
+        <WhyChooseUsSection />
+        <IndustriesSection />
+        <Testimonials />
+        <Faq />
+        <LandingContactUs />
+        <FindOurOfficesSection />
+        <Footer />
+        <FixedSocials />
       </div>
-      <Technologies />
-      <CaseStudiesSection />
-      <ServicesSection />
-      <Process />
-      <WhyChooseUsSection />
-      <IndustriesSection />
-      <Testimonials />
-      <Faq />
-      <LandingContactUs />
-      <FindOurOfficesSection />
-      <Footer />
-      <FixedSocials />
     </div>
   )
 }

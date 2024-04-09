@@ -1,12 +1,11 @@
 "use client";
 import Home from "@/pages/Home";
 import Image from "next/image";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import "./globals.css";
-import { GlobalContext } from "@/context/GlobalContext";
+import { GlobalContextProvider } from "@/context/GlobalContext";
 
 export default function page() {
-  const {palette} = useContext(GlobalContext)
   useEffect(() => {
     const scrollers = document.querySelectorAll(".scroller");
 
@@ -37,14 +36,9 @@ export default function page() {
   });
 
   return (
-    <div
-      className="transition-all duration-700"
-      style={{
-        background: palette?.background,
-        color: palette?.color,
-      }}
-    >
+    <GlobalContextProvider>
+
       <Home />
-    </div>
+    </GlobalContextProvider>
   );
 }
