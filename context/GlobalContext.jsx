@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import React, { createContext, useState, useEffect } from "react";
-
 
 export const GlobalContext = createContext();
 
